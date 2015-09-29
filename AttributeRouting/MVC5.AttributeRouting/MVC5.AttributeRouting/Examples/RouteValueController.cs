@@ -11,7 +11,7 @@ namespace MVC5.AttributeRouting.Examples
         [Route("RouteValue/Index/{year}/{month}/{day}")]
         public ActionResult Index(string year, string month, string day)
         {
-            string result = @"Route: RouteValue/Index/{year}/{month}/{day}";
+            const string result = @"Route: RouteValue/Index/{year}/{month}/{day}";
             string value = "year:" + year + " month:" + month + " day:" + day;
 
             return Content(result + "<br/>" + value);
@@ -20,7 +20,7 @@ namespace MVC5.AttributeRouting.Examples
         [Route("RouteValue/Details/{id}")]
         public ActionResult Details(int id)
         {
-            string result = @"Route: RouteValue/Details/{id}";
+            const string result = @"Route: RouteValue/Details/{id}";
             string idValue = "id:" + id;
 
             return Content(result + "<br/>" + idValue);

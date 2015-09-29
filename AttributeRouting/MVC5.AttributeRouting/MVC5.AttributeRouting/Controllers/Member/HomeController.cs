@@ -11,12 +11,13 @@ namespace MVC5.AttributeRouting.Controllers.Member
     [Route("Home/{action}")]
     public class HomeController : Controller
     {
-        string routePattern = "Pattern: Member/Home/{action}";
+        private const string RoutePattern = "Pattern: Member/Home/{action}";
+
         public ActionResult Index()
         {
-            string action = "Current Route: Member/Home/Index";
+            const string action = "Current Route: Member/Home/Index";
 
-            return Content(routePattern + "<br/>" + action);
+            return Content(RoutePattern + "<br/>" + action);
         }
-	}
+    }
 }

@@ -11,12 +11,13 @@ namespace MVC5.AttributeRouting.Controllers.Admin
     [Route("Home/{action}")]
     public class HomeController : Controller
     {
-        string routePattern = "Pattern: Admin/Home/{action}";
+        private const string RoutePattern = "Pattern: Admin/Home/{action}";
+
         public ActionResult Index()
         {
-            string action = "Current Route: Admin/Home/Index";
+            const string action = "Current Route: Admin/Home/Index";
 
-            return Content(routePattern + "<br/>" + action);
+            return Content(RoutePattern + "<br/>" + action);
         }
     }
 }

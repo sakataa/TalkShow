@@ -11,7 +11,7 @@ namespace MVC5.AttributeRouting.Examples
         [Route("RouteConstraint/{id:int}")]
         public ActionResult Details(int id)
         {
-            string route = @"Route: RouteConstraint/{id:int}";
+            const string route = @"Route: RouteConstraint/{id:int}";
             string value = "id:" + id;
 
             return Content(route + "<br/>" + value);
@@ -19,7 +19,7 @@ namespace MVC5.AttributeRouting.Examples
         [Route("RouteConstraint/{name}")]
         public ActionResult Details(string name)
         {
-            string route = @"Route: RouteConstraint/{name}";
+            const string route = @"Route: RouteConstraint/{name}";
             string value = "name:" + name;
 
             return Content(route + "<br/>" + value);
@@ -27,7 +27,7 @@ namespace MVC5.AttributeRouting.Examples
         [Route("RouteConstraint/{isValid:bool}")]
         public ActionResult Details(bool isValid)
         {
-            string route = @"Route: RouteConstraint/{isValid:bool}";
+            const string route = @"Route: RouteConstraint/{isValid:bool}";
             string value = "isValid:" + isValid.ToString();
 
             return Content(route + "<br/>" + value);

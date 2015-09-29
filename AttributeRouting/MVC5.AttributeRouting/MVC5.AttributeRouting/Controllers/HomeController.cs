@@ -8,8 +8,7 @@ namespace MVC5.AttributeRouting.Controllers
 {
     public class HomeController : Controller
     {
-        //[Route("")]
-        //[Route]
+        [Route("")]
         [Route("home")]
         [Route("home/index")]
         public ActionResult Index()
