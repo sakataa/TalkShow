@@ -117,7 +117,7 @@ namespace ASP5AttributeRouting.Controllers
                     //await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
                     //    "Please confirm your account by clicking this link: <a href=\"" + callbackUrl + "\">link</a>");
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction(nameof(HomeController.Index), "Home");
+                    return RedirectToAction(nameof(HomePageController.Index), "Home");
                 }
                 AddErrors(result);
             }
@@ -133,7 +133,7 @@ namespace ASP5AttributeRouting.Controllers
         public IActionResult LogOff()
         {
             _signInManager.SignOut();
-            return RedirectToAction(nameof(HomeController.Index), "Home");
+            return RedirectToAction(nameof(HomePageController.Index), "Home");
         }
 
         //
@@ -470,7 +470,7 @@ namespace ASP5AttributeRouting.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(HomePageController.Index), "Home");
             }
         }
 

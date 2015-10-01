@@ -365,7 +365,7 @@ namespace ASP5AttributeRouting.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController));
+                return RedirectToAction(nameof(HomePageController.Index), nameof(HomePageController));
             }
         }
 

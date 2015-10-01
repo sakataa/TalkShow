@@ -6,25 +6,26 @@ using Microsoft.AspNet.Mvc;
 
 namespace ASP5AttributeRouting.Controllers
 {
-    public class HomeController : Controller
+    [Route("[controller]/[action]")]
+    public class HomePageController : Controller
     {
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/Home/Index.cshtml");
         }
 
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
 
-            return View();
+            return View("~/Views/Home/About.cshtml");
         }
 
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
 
-            return View();
+            return View("~/Views/Home/Contact.cshtml");
         }
 
         public IActionResult Error()
