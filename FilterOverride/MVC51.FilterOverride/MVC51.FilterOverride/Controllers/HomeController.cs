@@ -10,7 +10,7 @@ namespace MVC51.FilterOverride.Controllers
     public class HomeController : Controller
     {
         [OverrideAuthorization]
-        //[Authorize(Users = "member")]
+        [Authorize(Users = "member")]
         public ActionResult Index()
         {
             return View();
