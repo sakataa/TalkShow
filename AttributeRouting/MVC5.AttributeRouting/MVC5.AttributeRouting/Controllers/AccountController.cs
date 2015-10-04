@@ -12,6 +12,7 @@ using MVC5.AttributeRouting.Models;
 
 namespace MVC5.AttributeRouting.Controllers
 {
+    [Route("{controller}/{action}")]
     [Authorize]
     public class AccountController : Controller
     {
