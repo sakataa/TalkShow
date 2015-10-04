@@ -6,11 +6,17 @@ using Microsoft.AspNet.Mvc;
 
 namespace MVC6.Controllers
 {
+    [Route("mvc/[controller]/[action]/{id:int}")]
     public class HomeController : Controller
     {
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult GetById(int id)
+        {
+            return Content("GetById: " + id);
         }
 
         public IActionResult About()

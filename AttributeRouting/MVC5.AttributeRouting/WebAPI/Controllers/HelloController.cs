@@ -2,20 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Http;
 
 namespace WebAPI.Controllers
 {
-    [Route("api/hello")]
-    public class HelloController : Controller
+    //[RoutePrefix("{controller}")]
+    //[Route("{action}/{id:int?}")]
+    [Route("{controller}/{action}/{id:int?}")]
+    public class Hello1Controller : ApiController
     {
-        public IEnumerable<string> GetHello()
+        [HttpGet]
+        public IEnumerable<string> HelloEveryOne()
         {
-            return new string[] { "hello1", "hello2", "a", "b" };
+            return new string[] { "hello1", "hello2", "3", "b" };
         }
-        //public string GetHello(int id)
-        //{
-        //    return "hello " + id;
-        //}
+        [Route("~/hello/HelloFull/{id}/{name}")]
+        [HttpGet]
+        public string HelloFull(int id, string name)
+        {
+            return "hello " + id + " My name is: " + name;
+        }
+        [HttpGet]
+        public string HelloById(int id)
+        {
+            return "hello " + id;
+        }
 	}
 }
