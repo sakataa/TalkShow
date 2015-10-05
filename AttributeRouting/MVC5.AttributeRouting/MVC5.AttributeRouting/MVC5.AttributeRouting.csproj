@@ -228,6 +228,7 @@
     <Folder Include="Views\OptionalUriParameter\" />
     <Folder Include="Views\RouteConstraint\" />
     <Folder Include="Views\RouteDefault\" />
+    <Folder Include="Views\RouteMixing\" />
     <Folder Include="Views\RouteValue\" />
   </ItemGroup>
   <ItemGroup>
