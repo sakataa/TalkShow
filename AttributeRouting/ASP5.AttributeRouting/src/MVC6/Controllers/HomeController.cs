@@ -6,9 +6,10 @@ using Microsoft.AspNet.Mvc;
 
 namespace MVC6.Controllers
 {
-    [Route("mvc/[controller]/[action]/{id:int}")]
+    [Route("mvc/[controller]/[action]/{id:int?}")]
     public class HomeController : Controller
     {
+        [Route("~/")]
         public IActionResult Index()
         {
             return View();
