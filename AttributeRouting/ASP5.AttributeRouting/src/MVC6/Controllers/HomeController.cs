@@ -38,5 +38,14 @@ namespace MVC6.Controllers
         {
             return View("~/Views/Shared/Error.cshtml");
         }
+
+        [Route("~/RouteValue/GetDate/{year}/{month}/{day}")]
+        public IActionResult GetDate(string year, string month, string day)
+        {
+            const string result = @"Route: RouteValue/Index/{year}/{month}/{day}";
+            string value = "year:" + year + " month:" + month + " day:" + day;
+
+            return Content(result + "<br/>" + value);
+        }
     }
 }
