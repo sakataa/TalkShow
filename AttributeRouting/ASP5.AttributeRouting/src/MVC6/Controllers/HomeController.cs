@@ -6,7 +6,7 @@ using Microsoft.AspNet.Mvc;
 
 namespace MVC6.Controllers
 {
-    [Route("mvc/[controller]/[action]/{id:int?}")]
+    [Route("MVC/[controller]/[action]/{id:int?}")]
     public class HomeController : Controller
     {
         [Route("~/")]

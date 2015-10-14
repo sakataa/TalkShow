@@ -32,5 +32,5 @@ namespace MVC5.AttributeRouting.Examples
 
             return Content(route + "<br/>" + value);
         }
-	}
+    }
 }

@@ -6,7 +6,7 @@
 }
 
 
-<form asp-controller="RouteMixing" asp-action="Index" method="post">
+<form asp-controller="RouteMixing" asp-action="PostIndex" method="post">
     <div>
         <label>Name:</label>
         <input name="id" type="text"/>
@@ -15,4 +15,4 @@
     <input type="submit" value="Save"/>
 </form>
 
-<div class="alert-success">@ViewBag.Message</div>
+<div class="alert alert-success">@ViewBag.Message</div>
