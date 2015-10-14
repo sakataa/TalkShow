@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "ASP5.FilterOverriding"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-ASP5.FilterOverriding-7e3786cb-1d54-4a8f-957d-378f7fdfe2b6;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}
