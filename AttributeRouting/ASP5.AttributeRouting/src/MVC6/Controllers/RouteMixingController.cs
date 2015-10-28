@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using MVC6.Models;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,6 +22,18 @@ namespace MVC6.Controllers
         public IActionResult PostIndex(int id)
         {
             return Content("[HttpPost('asp5 / Mixing / Default')]" + id);
+        }
+
+        [HttpGet("asp5/Mixing/TestPost")]
+        public IActionResult Test()
+        {
+            return View();
+        }
+
+        [HttpPost("asp5/Mixing/TestPost")]
+        public IActionResult Test(LoginViewModel loginModel)
+        {
+            return Content("Post login model successfully");
         }
     }
 }

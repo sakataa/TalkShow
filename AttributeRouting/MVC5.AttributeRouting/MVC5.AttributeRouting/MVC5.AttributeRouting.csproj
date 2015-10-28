@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -163,6 +164,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Member\HomeController.cs" />
     <Compile Include="Examples\ControllerRouteController.cs" />
+    <Compile Include="Examples\DynamicController.cs" />
     <Compile Include="Examples\OptionalUriParameterController.cs" />
     <Compile Include="Examples\RouteConstraintController.cs" />
     <Compile Include="Examples\RouteDefaultController.cs" />
@@ -225,6 +227,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\ControllerRoute\" />
+    <Folder Include="Views\Dynamic\" />
     <Folder Include="Views\OptionalUriParameter\" />
     <Folder Include="Views\RouteConstraint\" />
     <Folder Include="Views\RouteDefault\" />

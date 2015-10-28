@@ -16,7 +16,7 @@ namespace MVC5.AttributeRouting.Examples
 		}
 		public ActionResult Detail(int id)
 		{
-			return Content("OptionalUriParameter/Index/id");
+			return Content("OptionalUriParameter/Index/id = " + id);
 		}
 	}
 }

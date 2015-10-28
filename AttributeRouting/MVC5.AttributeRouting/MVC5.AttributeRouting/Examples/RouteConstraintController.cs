@@ -16,7 +16,7 @@ namespace MVC5.AttributeRouting.Examples
 
             return Content(route + "<br/>" + value);
         }
-        [Route("RouteConstraint/{name}")]
+        [Route("RouteConstraint/{name:minlength(6):maxlength(7)}")]
         public ActionResult Details(string name)
         {
             const string route = @"Route: RouteConstraint/{name}";

@@ -25,7 +25,7 @@ namespace MVC5.AttributeRouting.Examples
 
 			return Content(RoutePattern + "<br/>" + currentRoute);
 		}
-		public ActionResult Delete(int id)
+		public ActionResult Delete(int? id)
 		{
 			string currentRoute = @"Current Route: RouteDefault/Delete/" + id;
 
