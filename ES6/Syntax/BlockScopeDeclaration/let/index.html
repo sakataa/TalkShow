@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+ </head>
+ <body>
+	<button onclick="function1()">Click function 1</button>
+	
+	<button onclick="function2()">Click function 2</button>
+	
+	<button onclick="function3()">Click function 3</button>
+	
+	<button onclick="function4()">Click function 4</button>
+ </body>
+</html>
+
+<script>
+function function1() {
+    var a = 2
+	{
+	 let a = 3
+	 alert( a ) // 3
+	}
+	alert( a )  // 2
+}
+
+function function2(){
+	let a = 2;
+	if (a > 1) {
+		let b = a * 3;
+		alert(`b: ${b}` );  // 6
+		for (let i = a; i <= b; i++) {
+			let j = i + 10
+			alert(`j${i}: ${j}` );
+		}
+		// 12 13 14 15 16
+		let c = a + b;
+		alert(`c: ${c}` );  // 8
+	}
+	alert(`b: ${b}` ); //Uncaught ReferenceError: b is not defined
+}
+
+function function3(){
+	{
+		alert(a); // undefined
+		alert(b); //Uncaught ReferenceError: b is not defined
+		var a;
+		let b;
+	}
+}
+
+function function4(){
+	let funcs = [];
+	for (let i = 0; i < 5; i++) {
+		funcs.push( function(){
+			alert(i);
+		});
+	}
+	funcs[3]();  // 3
+}
+</script>
