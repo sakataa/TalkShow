@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<style>
+p{
+text-align: center;
+font-size: 24px;
+}
+</style>  
+ </head>
+ <body onload="onLoad()">
+	<p id="test"></p>
+	
+	
+<script>
+function onLoad() {
+    var text = document.getElementById('test');
+    var [a, ,b] = [1,2,3];
+	text.innerHTML = `${a} and ${b}`;
+}
+</script>
+ </body>
+</html>
