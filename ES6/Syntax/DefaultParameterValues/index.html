@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+ </head>
+ <body>
+ <h1>Default Parameter Value</h1>
+	<button onclick="function1()">Click function 1</button>
+	
+	<button onclick="function2()">Click function 2</button>
+	
+	<button onclick="function3()">Click function 3</button>
+	
+	<button onclick="function4()">Click function 4</button>
+	
+	<button onclick="function5()">Click function 5</button>
+	
+	<button onclick="function6()">Click function 6</button>
+ </body>
+</html>
+
+<script>
+function function1(){
+	let foo = function(x, y){
+		x = x || 11;
+		y = y || 31;
+		alert(x + y);
+	}
+	
+	foo();  // 42
+	foo( 5, 6 );  // 11
+	foo( 5 );  // 36
+	foo( null, 6 );  // 17
+	foo( 0, 42 );  // 53 <-- Oops, not 42
+}
+
+
+function function2(){
+	let foo = function(x, y){
+		x = (x !== undefined) ? x : 11;
+		y = (y !== undefined) ? y : 31;
+		alert(x + y);
+	}
+	
+	foo( 0, 42 );  // 42
+	foo( undefined, 6 );  // 17
+}
+
+function function3(){
+	let foo = function(x, y){
+		x = (0 in arguments) ? x : 11;
+		y = (1 in arguments) ? y : 31;
+		alert(x + y);
+	}
+	
+	foo( 5 );  // 36
+	foo( 5, undefined );  // NaN
+}
+
+function function4(){
+	let foo = function(x = 11, y = 31){
+		alert(x + y);
+	}
+	
+	foo();  // 42
+	foo( 5, 6 );  // 11
+	foo( 0, 42 );  // 42
+	foo( 5 );  // 36
+	foo( 5, undefined );  // 36 <-- `undefined` is missing
+	foo( 5, null );  // 5 <-- null coerces to `0`
+	foo( undefined, 6 );  // 17 <-- `undefined` is missing
+	foo( null, 6 );  // 6 <-- null coerces to `0`
+}
+
+function function5(){
+	let bar = function(val) {
+		console.log( "bar called!" );
+		return y + val;
+	}
+	let foo = function(x = y + 3, z = bar(x)) {
+		alert(x);
+		alert(z);
+	}
+	var y = 5;
+	foo();  // "bar called"
+	 // 8 13
+	foo( 10 );  // "bar called"
+	 // 10 15
+	y = 6;
+	foo( undefined, 10 );  // 9 10
+}
+
+function function6(){
+	var w = 1, z = 2;
+	let foo = function(x = w + 1, y = x + 1, z = z + 1) {
+		alert(x);
+		alert(y);
+		alert(z);
+	}
+	foo();  // ReferenceError
+}
+</script>

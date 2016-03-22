@@ -3,6 +3,7 @@
   <head> 
  </head>
  <body>
+ <h1>Spread operator</h1>
 	<button onclick="function1()">Click function 1</button>
 	
 	<button onclick="function2()">Click function 2</button>
@@ -10,18 +11,19 @@
 </html>
 
 <script>
-function function1() {
-	const a = 2;
-	alert(a);  // 2
-	a = 3;  // TypeError!
+function function1(){
+	foo( ...[1, 2, 3] );// 1 2 3
+	//foo. apply( null, [1, 2, 3] );
+}
+function foo(x, y, z) {
+	alert(x);
+	alert(y);
+	alert(z);
 }
 
 function function2(){
-	const a = [1, 2, 3];
-	 a.push(4);
-	 alert(a);  // [1,2,3,4]
-	 a.push(5);
-	 alert(a);  // [1,2,3,4,5]
-	 a = 42;  // TypeError!
+	let a = [2, 3, 4];
+	let b = [ 1, ... a, 5 ];
+	alert(b); // [1,2,3,4,5]
 }
 </script>

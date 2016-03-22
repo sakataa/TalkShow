@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+ </head>
+ <body>
+ <h1>Rest operator</h1>
+	<button onclick="function1()">Click function 1</button>
+ </body>
+</html>
+
+<script>
+function function1(){
+	foo( 1, 2, 3, 4, 5 );  // 1 2 [3,4,5]
+}
+function foo(x, y, ... z) {
+	console.log( x, y, z );
+	alert(x);
+	alert(y);
+	alert(z);
+}
+</script>
