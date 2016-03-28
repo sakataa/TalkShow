@@ -20,3 +20,14 @@ function Ex2(){
     console.log(re2.test( str ));  // false
     console.log(re2.lastIndex);  // 0 -- reset after previous match failure
 }
+
+function Ex3(){
+    var re = /\d+\.\s(.*?)(?:\s|$)/y;
+    let str = "1. foo 2. bar 3. baz";
+    
+    str.match(re); // [ "1. foo ", "foo" ]
+    console.log(re.lastIndex); // 7 -- correct position!
+    str.match(re); // [ "2. bar ", "bar" ]
+    console.log(re.lastIndex); // 14 -- correct position!
+    str.match(re); // ["3. baz", "baz"]
+}
