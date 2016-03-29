@@ -67,3 +67,13 @@ function Ex6() {
     console.log(re3.source); // "foo*"
     console.log(re3.flags); // "gi"
 }
+
+function Ex7() {
+    let regex = /^foo/my;
+    
+    regex.lastIndex = 2;
+    console.log(regex.test("..foo")); // false
+    regex.lastIndex = 2;
+    console.log(regex.test(".\nfoo")); // true
+    console.log(regex.lastIndex); //5
+}
