@@ -22,12 +22,48 @@ function Ex2(){
 }
 
 function Ex3(){
-    var re = /\d+\.\s(.*?)(?:\s|$)/y;
+    let re = /\d+\.\s(.*?)(?:\s|$)/y;
     let str = "1. foo 2. bar 3. baz";
     
-    str.match(re); // [ "1. foo ", "foo" ]
-    console.log(re.lastIndex); // 7 -- correct position!
-    str.match(re); // [ "2. bar ", "bar" ]
-    console.log(re.lastIndex); // 14 -- correct position!
-    str.match(re); // ["3. baz", "baz"]
+    console.log(`Example 3:`);
+    console.log(re.exec( str )); //[ "1. foo ", "foo" ]
+    console.log(re.lastIndex); //7
+    console.log(re.exec( str )); //[ "2. bar ", "bar" ]
+    console.log(re.lastIndex); //14
+    console.log(re.exec( str )); //["3. baz", "baz"]
+    console.log(re.lastIndex); //20
+    console.log(re.exec( str )); //null
+    console.log(re.lastIndex); //0
+}
+
+function Ex4(){
+    let re = /o+./g, // <-- look, `g`!
+    //let re = /o+./y, // <-- look, `y`!
+    str = "foot book more";
+    
+    console.log(re.exec( str )); // ["oot"]
+    console.log(re.lastIndex); // 4
+    console.log(re.exec( str )); // ["ook"]
+    console.log(re.lastIndex); // 9
+    console.log(re.exec( str )); // ["or"]
+    console.log(re.lastIndex); // 13
+    console.log(re.exec( str )); // null -- no more matches!
+    console.log(re.lastIndex); // 0 -- starts over now!
+}
+
+function Ex5(){
+    let re = /foo/ig;
+    console.log(re.flags); // "gi"
+}
+
+function Ex6() {
+    let re1 = /foo*/y;
+    console.log(re1.source); // "foo*"
+    console.log(re1.flags); // "y"
+    let re2 = new RegExp( re1 );
+    console.log(re2.source); // "foo*"
+    console.log(re2.flags); // "y"
+    let re3 = new RegExp( re1, "ig" );
+    console.log(re3.source); // "foo*"
+    console.log(re3.flags); // "gi"
 }
