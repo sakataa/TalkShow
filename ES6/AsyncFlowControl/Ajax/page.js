@@ -1,5 +1,5 @@
 let url = Util.getUrl("story.json");
-function Ex1() {   
+function Ex1() {
     Util.getData(url).then(function (response) {
         console.log("Success!", response);
     }, function (error) {
@@ -7,7 +7,7 @@ function Ex1() {
     });
 }
 
-function Ex2() {   
+function Ex2() {
     Util.getData(url).then(function (response) {
         return JSON.parse(response);
     }).then(function (response) {
@@ -15,23 +15,23 @@ function Ex2() {
     });
 }
 
-function Ex3(){
+function Ex3() {
     Util.getJSON(url).then(function (response) {
         console.log("Yey JSON!", response);
     });
 }
 
-function Ex4(){
+function Ex4() {
     Util.getChapter(1);
     Util.getChapter(4);
 }
 
-function Ex5(){
+function Ex5() {
     Util.getChapterWithReusingPromise(1);
     Util.getChapterWithReusingPromise(4);
 }
 
-function Ex6(){
+function Ex6() {
     var jsonPromise = new Promise(function (resolve, reject) {
         // JSON.parse throws an error if you feed it some
         // invalid JSON, so this implicitly rejects:
@@ -48,18 +48,17 @@ function Ex6(){
 }
 
 function Ex7() {
-    Util.getChapterSync();
+    Util.getChaptersAsync()
+        .then(function (chapters) {
+            chapters.forEach(function (chapter) {
+                console.log(chapter);
+            });
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+function Ex8() {
+    Util.getChaptersSync();
+}
