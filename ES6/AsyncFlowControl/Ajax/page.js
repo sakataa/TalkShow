@@ -1,8 +1,6 @@
-let rootUrl = "Data";
-let chapterRootUrl = rootUrl + "/Chapters";
-let url = getUrl("story.json");
+let url = Util.getUrl("story.json");
 function Ex1() {   
-    get(url).then(function (response) {
+    Util.getData(url).then(function (response) {
         console.log("Success!", response);
     }, function (error) {
         console.log("Failed!", error);
@@ -10,7 +8,7 @@ function Ex1() {
 }
 
 function Ex2() {   
-    get(url).then(function (response) {
+    Util.getData(url).then(function (response) {
         return JSON.parse(response);
     }).then(function (response) {
         console.log("Yey JSON!", response);
@@ -18,19 +16,19 @@ function Ex2() {
 }
 
 function Ex3(){
-    getJSON(url).then(function (response) {
+    Util.getJSON(url).then(function (response) {
         console.log("Yey JSON!", response);
     });
 }
 
 function Ex4(){
-    getChapter(1);
-    getChapter(4);
+    Util.getChapter(1);
+    Util.getChapter(4);
 }
 
 function Ex5(){
-    getChapterWithReusingPromise(1);
-    getChapterWithReusingPromise(4);
+    Util.getChapterWithReusingPromise(1);
+    Util.getChapterWithReusingPromise(4);
 }
 
 function Ex6(){
@@ -49,54 +47,19 @@ function Ex6(){
     });
 }
 
-function get(url) {
-    return new Promise(function (resolve, reject) {
-        let request = new XMLHttpRequest();
-        request.open("GET", url);
-        //request.responseType = "json";
-
-        request.onload = function () {
-            if (request.status === 200) {
-                resolve(request.response);
-            }
-            else {
-                reject(Error(request.statusText));
-            }
-        };
-
-        // Handle network errors
-        request.onerror = function () {
-            reject(Error("Network Error"));
-        };
-
-        request.send();
-    });
+function Ex7() {
+    Util.getChapterSync();
 }
 
-function getChapter(index){   
-    getJSON(url).then(function (story) {
-        return getJSON(`${chapterRootUrl}/${story.chapterUrls[index - 1]}`);
-    }).then(function (chapter) {
-        console.log(`Got chapter ${index}!`, chapter);
-    });
-}
 
-let storyPromise;
-function getChapterWithReusingPromise(index){
-    storyPromise = storyPromise || getJSON(url); //reuse promise, story.json only fetch once
-    
-    storyPromise.then(function (story) {
-        return getJSON(`${chapterRootUrl}/${story.chapterUrls[index - 1]}`);
-    }).then(function (chapter) {
-        console.log(`Got chapter ${index}!`, chapter);
-    });
-}
 
-function getUrl(fileName) {
-    return rootUrl + `/${fileName}`;
-}
 
-function getJSON(url) {
-    return get(url).then(JSON.parse);
-}
+
+
+
+
+
+
+
+
 
