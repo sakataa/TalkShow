@@ -132,7 +132,6 @@ let Util = (function () {
         });
 
         for (let chapterPromise of chapterPromises) {
-            console.log("Begin yield");
             let chapter = yield chapterPromise;
             console.log(chapter);
         }
@@ -145,9 +144,7 @@ let Util = (function () {
         function continuer(value) {
             let result = generator.next(value);
             if (!result.done) {
-                console.log("register value resolving");
                 Promise.resolve(result.value).then(response => {
-                    console.log("resolved");
                     continuer(response);
                 })
                     .catch(error => {
@@ -162,14 +159,13 @@ let Util = (function () {
     return {
         rootUrl: rootUrl,
         chapterRootUrl: chapterRootUrl,
-        getData(url) { return getData(url); },
-        getChapter(index) { getChapter(index) },
-        getChapterWithReusingPromise(index) { getChapterWithReusingPromise(index) },
-        getChaptersAsync() { return getChaptersAsync() },
-        getChaptersSync() { getChaptersSync(); },
-        getUrl(fileName) { return getUrl(fileName) },
-        getJSON(url) { return getJSON(url) },
-        getDataWithGenerator: getDataWithGenerator,
-        createGenerator: createGenerator
+        getData: getData,
+        getChapter: getChapter,
+        getChapterWithReusingPromise: getChapterWithReusingPromise,
+        getChaptersAsync: getChaptersAsync,
+        getChaptersSync: getChaptersSync,
+        getUrl: getUrl,
+        getJSON: getJSON,
+        getDataWithGenerator: getDataWithGenerator
     }
 })();
