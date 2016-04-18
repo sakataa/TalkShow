@@ -62,3 +62,7 @@ function Ex7() {
 function Ex8() {
     Util.getChaptersSync();
 }
+
+function Ex9() {
+    Util.getDataWithGenerator(url);
+}

@@ -1,7 +1,7 @@
 let Util = (function () {
     let rootUrl = "Data";
     let chapterRootUrl = rootUrl + "/Chapters";
-    const fakeSlowNetwork = 0;
+    const fakeSlowNetwork = 1;
     const waitingTime = 4000;
 
     function wait(ms) {
@@ -121,6 +121,44 @@ let Util = (function () {
         return JSON.parse(getSync(url));
     }
 
+    function* createGenerator(url) {
+        let story = yield getJSON(url);
+        console.log(story);
+
+        let chapterPromises = story.chapterUrls.map(chapterUrl => {
+            let fullChapterUrl = `${chapterRootUrl}/${chapterUrl}`;
+
+            return getJSON(fullChapterUrl);
+        });
+
+        for (let chapterPromise of chapterPromises) {
+            console.log("Begin yield");
+            let chapter = yield chapterPromise;
+            console.log(chapter);
+        }
+    }
+
+    let generator;
+    function getDataWithGenerator(url) {
+        generator = generator || createGenerator(url);
+        
+        function continuer(value) {
+            let result = generator.next(value);
+            if (!result.done) {
+                console.log("register value resolving");
+                Promise.resolve(result.value).then(response => {
+                    console.log("resolved");
+                    continuer(response);
+                })
+                    .catch(error => {
+                        generator.throw(error);
+                    });
+            }
+        }
+        
+        return continuer();
+    }
+
     return {
         rootUrl: rootUrl,
         chapterRootUrl: chapterRootUrl,
@@ -130,6 +168,8 @@ let Util = (function () {
         getChaptersAsync() { return getChaptersAsync() },
         getChaptersSync() { getChaptersSync(); },
         getUrl(fileName) { return getUrl(fileName) },
-        getJSON(url) { return getJSON(url) }
+        getJSON(url) { return getJSON(url) },
+        getDataWithGenerator: getDataWithGenerator,
+        createGenerator: createGenerator
     }
 })();
