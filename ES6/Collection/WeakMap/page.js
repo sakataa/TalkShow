@@ -21,23 +21,25 @@ function Ex1() {
 }
 
 function Ex2() {
-    var map = new Map();
-    var weakmap = new WeakMap();
+    // Start with a map for holding some data:
+    var wm = new WeakMap();
+    let m = new Map();
 
-    {
-        let a = { x: 12 };
-        let b = { y: 15 };
+    // Create a key object and store it in the map
+    var obj = { a: 1 };
+    wm.set(obj, "a is 1");
+    m.set(obj, "a is 1");
 
-        map.set(a, 1);
-        weakmap.set(b, 2);
-        
-        a = null;
-        b = null;
-        
-        console.log(map);
-        console.log(weakmap);
-    }
-    
-    console.log(map);
-    console.log(weakmap);
+    // Get the data by the `obj` key
+    console.log(wm.get(obj));
+    //=> "a is 1" (as expected)
+    console.log(m.get(obj));
+
+    // Now, re-associate `obj`
+    var obj = { b: 2 };
+
+    // Try to access the entry again
+    console.log(wm.get(obj));
+    console.log(m.get(obj));
+//=> undefined
 }
