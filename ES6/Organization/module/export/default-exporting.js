@@ -4,8 +4,8 @@ function default_foo() {
 
 let default_bar = 40;
 
-//export default default_foo;
-export {default_foo as default};
+//export default default_foo; //not change value
+export {default_foo as default}; //changeable value
 export { default_bar };
 //export { default_foo as default, default_bar };
 

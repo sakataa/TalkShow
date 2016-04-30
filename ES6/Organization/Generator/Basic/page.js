@@ -1,7 +1,6 @@
 function Ex1(){
     let foo = function *() {
-        let x = yield 10;
-        console.log(x);
+        yield 10;
     }
     
     let res = foo();

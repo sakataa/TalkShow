@@ -5,7 +5,8 @@
      entry: {
          basic: './import/importing.js',
          defaultImporting: './import/default-importing.js',
-         exporting_anotherfile: './import/importing-anotherfile.js'
+         exporting_anotherfile: './import/importing-anotherfile.js',
+         wildcard_importing: './import/wildcard-importing.js'
          //circular_module_dependency: './import/circular-module-dependency.js'
      },
      output: {

@@ -81,20 +81,43 @@ function Ex2(){
 }
 
 function Ex3(){
-    let a = [1, 2, 3, 4, 5];
-    let b = [0, ...a, 6];
-    console.log(b);
+        //With Spread operator
+        let a = [1, 2, 3, 4, 5];
+        let aIterator = a[Symbol.iterator]();
+        let b = [0, ...aIterator, 6];
+        console.log("Spread operator");
+        console.log(b); // [0,1,2,3,4,5,6]
 
+    //With Destructuring and Rest operator
     let it = b[Symbol.iterator]();
     let [x, y] = it;  // take just the first two elements from `it`
     let [z, ...w] = it;  // take the third, then the rest all at once
     
+    console.log("Destructuring and Rest operator");
     // is `it` is fully exhausted? Yep.
-    console.log(it.next());  // { value: undefined, done: true
+    console.log(it.next());  // { value: undefined, done: true}
 
     console.log(x);
     console.log(y);
     console.log(z);
     console.log(w);
+}
+
+function Ex4(){
+    let iterable = {
+        [Symbol.iterator]() {
+            let n = 1;
+            return {
+                next() {
+                    return { value: n++, done: false };
+                }
+            };
+        }
+    }
+    
+    for (let v of iterable) {
+        console.log(v);
+        if (v > 10) break;
+    }
 }
 
