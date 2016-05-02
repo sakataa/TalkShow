@@ -59,7 +59,7 @@ function Ex2(){
     class Dog extends Animal{
         constructor(name, color){
             super(name);
-            this._color = color;            
+            this._color = color;        
         }
         
         eat(){
