@@ -3,7 +3,7 @@ let x = { id: 1 },
 function CreateSetData() {
     let s = new Set();
 
-    s.add(x).add(y).add(x).add(1).add("string");
+    s.add(x).add(y).add(x).add(1).add("string").add(1);
 
     return s;
 }

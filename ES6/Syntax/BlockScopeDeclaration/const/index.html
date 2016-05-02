@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head> 
- </head>
- <body>
-	<button onclick="function1()">Click function 1</button>
-	
-	<button onclick="function2()">Click function 2</button>
- </body>
+
+<head>
+    <script src="page.js" type="text/javascript">
+
+    </script>
+
+    <title>Const declarations</title>
+</head>
+
+<body>
+    <h1>Const declarations</h1>
+    <table>
+        <tr>
+            <td>
+                <button onclick="Ex1()">Example 1</button>
+            </td>
+            <td>Basic</td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="Ex2()">Example 2</button>
+            </td>
+            <td>Array constant</td>
+        </tr>
+    </table>
+</body>
+
 </html>
-
-<script>
-function function1() {
-	const a = 2;
-	alert(a);  // 2
-	a = 3;  // TypeError!
-}
-
-function function2(){
-	const a = [1, 2, 3];
-	 a.push(4);
-	 alert(a);  // [1,2,3,4]
-	 a.push(5);
-	 alert(a);  // [1,2,3,4,5]
-	 a = 42;  // TypeError!
-}
-</script>

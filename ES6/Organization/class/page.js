@@ -64,11 +64,11 @@ function Ex2(){
         
         eat(){
             super.eat();
-            console.log(`Its hair's ${this._color} very nice!!!`);
+            console.log(`Its hair is ${this._color}, nice!!!`);
         }
         
         bark(){
-            console.log(`A dog named ${this._name} and ${this._color} hair is barking`);
+            console.log(`A dog named ${this._name} with ${this._color} hair is barking`);
         }
     }
     
