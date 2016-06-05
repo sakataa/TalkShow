@@ -5,13 +5,18 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "test",
-    "webpack": "webpack --watch"
+    "webpack": "webpack --watch",
+    "rollup": "rollup -c",
+    "rollup-babel": "rollup -c"
   },
   "author": "walter",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.9.1",
     "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0"
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "rollup": "^0.26.4",
+    "rollup-plugin-babel": "^2.4.0"
   }
 }

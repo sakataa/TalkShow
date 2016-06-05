@@ -1,4 +1,4 @@
-import {Employee} from "../Export/employee"
+import { Employee, count } from "../Export/employee"
 
 let employee = new Employee("Rapth", "Developer");
 console.log(employee.title);

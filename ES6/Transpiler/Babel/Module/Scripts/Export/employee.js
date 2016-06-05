@@ -14,3 +14,8 @@ export class Employee extends Person {
       console.log(`name: ${this.name}, title: ${this.title}`);
     }
 }
+
+export let count = 1;
+export function square ( x ) {
+	return x * x;
+}
