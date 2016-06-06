@@ -1,0 +1,17 @@
+{
+  "name": "es6-demo",
+  "version": "1.0.0",
+  "description": "es6 demo",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0"
+  },
+  "scripts": {
+    "test": "test",
+    "babel": "./node_modules/.bin/babel ./Scripts -d ./Bundle"
+  },
+  "author": "Walter",
+  "license": "ISC"
+}
