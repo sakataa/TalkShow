@@ -45,7 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	module.exports = __webpack_require__(301);
+	module.exports = __webpack_require__(300);
 
 
 /***/ },
@@ -8102,127 +8102,100 @@
 
 /***/ },
 /* 299 */,
-/* 300 */,
-/* 301 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	var _employee = __webpack_require__(302);
-	
-	var employee = new _employee.Employee("Rapth", "Developer");
-	console.log(employee.title);
-	employee.prototypeMethod();
-	_employee.Employee.staticMethod();
-	
-	document.getElementById("output").innerHTML = "Name: " + employee.name + " -- Title: " + employee.title;
-
-/***/ },
-/* 302 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.count = exports.Employee = undefined;
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
-	
-	exports.square = square;
-	
-	var _person = __webpack_require__(303);
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	var _title = new WeakMap();
-	
-	var Employee = exports.Employee = function (_Person) {
-	  _inherits(Employee, _Person);
-	
-	  function Employee(name, title) {
-	    _classCallCheck(this, Employee);
-	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Employee).call(this, name));
-	
-	    _title.set(_this, title);
-	    return _this;
-	  }
-	
-	  _createClass(Employee, [{
-	    key: "prototypeMethod",
-	    value: function prototypeMethod() {
-	      _get(Object.getPrototypeOf(Employee.prototype), "prototypeMethod", this).call(this);
-	      console.log("name: " + this.name + ", title: " + this.title);
-	    }
-	  }, {
-	    key: "title",
-	    get: function get() {
-	      return _title.get(this);
-	    }
-	  }]);
-	
-	  return Employee;
-	}(_person.Person);
-	
-	var count = exports.count = 1;
-	function square(x) {
-	  return x * x;
-	}
-
-/***/ },
-/* 303 */
+/* 300 */
 /***/ function(module, exports) {
 
 	"use strict";
 	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
+	var storyUrl = "https://cdn.rawgit.com/sakataa/TalkShow/ES6/ES6/Demo/Organization/Generator/Asynchronous/Data/story.json";
+	var rootChapterUrl = "https://cdn.rawgit.com/sakataa/TalkShow/ES6/ES6/Demo/Organization/Generator/Asynchronous/Data/Chapters";
+	function getData(url) {
+	    return new Promise(function (resolve, reject) {
+	        var request = new XMLHttpRequest();
+	        request.open("GET", url);
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	        request.onload = function () {
+	            if (request.status === 200) {
+	                resolve(JSON.parse(request.response));
+	            } else {
+	                reject(Error(request.statusText));
+	            }
+	        };
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	        // Handle network errors
+	        request.onerror = function () {
+	            reject(Error("Network Error"));
+	        };
 	
-	var _name = Symbol();
+	        request.send();
+	    });
+	};
 	
-	var Person = exports.Person = function () {
-	    function Person(name) {
-	        _classCallCheck(this, Person);
+	function getChaptersAsync() {
+	    var storyPromise = getData(storyUrl);
+	    var chapterPromises = new Set();
 	
-	        this[_name] = name;
-	    }
+	    return storyPromise.then(function (data) {
+	        var _iteratorNormalCompletion = true;
+	        var _didIteratorError = false;
+	        var _iteratorError = undefined;
 	
-	    _createClass(Person, [{
-	        key: "prototypeMethod",
-	        value: function prototypeMethod() {
-	            console.log("call prototype method");
+	        try {
+	            for (var _iterator = data.chapterUrls[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	                var chapterUrl = _step.value;
+	
+	                chapterPromises.add(getData(rootChapterUrl + "/" + chapterUrl));
+	            }
+	        } catch (err) {
+	            _didIteratorError = true;
+	            _iteratorError = err;
+	        } finally {
+	            try {
+	                if (!_iteratorNormalCompletion && _iterator.return) {
+	                    _iterator.return();
+	                }
+	            } finally {
+	                if (_didIteratorError) {
+	                    throw _iteratorError;
+	                }
+	            }
 	        }
-	    }, {
-	        key: "name",
-	        get: function get() {
-	            return this[_name].toUpperCase();
-	        },
-	        set: function set(newName) {
-	            this[_name] = newName;
+	
+	        return Promise.all(chapterPromises);
+	    });
+	};
+	
+	function run() {
+	    getChaptersAsync().then(function (chapters) {
+	        var _iteratorNormalCompletion2 = true;
+	        var _didIteratorError2 = false;
+	        var _iteratorError2 = undefined;
+	
+	        try {
+	            for (var _iterator2 = chapters[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+	                var chapter = _step2.value;
+	
+	                console.log(chapter);
+	            }
+	        } catch (err) {
+	            _didIteratorError2 = true;
+	            _iteratorError2 = err;
+	        } finally {
+	            try {
+	                if (!_iteratorNormalCompletion2 && _iterator2.return) {
+	                    _iterator2.return();
+	                }
+	            } finally {
+	                if (_didIteratorError2) {
+	                    throw _iteratorError2;
+	                }
+	            }
 	        }
-	    }], [{
-	        key: "staticMethod",
-	        value: function staticMethod() {
-	            console.log("call static method");
-	        }
-	    }]);
-
-	    return Person;
-	}();
+	    });
+	}
+	
+	run();
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=UserManager.js.map
+//# sourceMappingURL=Promise.js.map

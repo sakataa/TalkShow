@@ -3,7 +3,9 @@ var path = require('path');
 module.exports = {
     entry: {
         BlockScope: "./Scripts/BlockScope/blockscope.js",
-        UserManager: "./Scripts/Module/userManager.js"
+        UserManager: ["babel-polyfill", "./Scripts/Module/userManager.js"],
+        Collection: ["babel-polyfill", "./Scripts/Collection/collection.js"],
+        Promise: ["babel-polyfill", "./Scripts/Promise/promise.js"]
     },
     output: {
         path: path.resolve(__dirname, './'),
@@ -13,6 +15,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['es2015']
