@@ -1,6 +1,8 @@
 let count = books.items.length;
 let bookList = books.items;
 let defaultLength = 1000000000;
+let es5EllapsedTime = 0;
+let es6EllapsedTime = 0;
 
 function showES5Result(es5ElapsedTime){
     document.getElementById("es5ElapsedTime").innerText = es5ElapsedTime + " ms";
@@ -29,4 +31,27 @@ function getResult(){
         }
         showResult(message);
     }
+}
+
+function resetTime() {
+    es5EllapsedTime = 0;
+    es6EllapsedTime = 0;
+}
+
+function testES5(es5FnTest) {
+    var start = performance.now();
+    es5FnTest();
+    var end = performance.now();
+    es5EllapsedTime = end - start;
+    showES5Result(es5EllapsedTime);
+    getResult();
+}
+
+function testES6(es6FnTest) {
+    var start = performance.now();
+    es6FnTest();
+    var end = performance.now();
+    es6EllapsedTime = end - start;
+    showES6Result(es6EllapsedTime);
+    getResult();
 }
