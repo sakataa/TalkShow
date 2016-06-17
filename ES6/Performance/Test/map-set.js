@@ -11,8 +11,6 @@ let map = new Map(),
     set = new Set();
 
 function testES5MapSetAddItem(){
-    
-
     testES5(function(){        
         for (var i = 0; i < length; i++) {
             keys.push(i);

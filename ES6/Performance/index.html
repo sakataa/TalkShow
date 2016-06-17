@@ -36,6 +36,21 @@
             <button onclick="testES5MapSetLookup()">ES5</button>
             <button onclick="testES6MapSetLookup()">ES6</button>
         </li>
+        <li>
+            <p>Arrow function</p>
+            <button onclick="testES5ArrowFunction()">ES5</button>
+            <button onclick="testES6ArrowFunction()">ES6</button>
+        </li>
+        <li>
+            <p>Arrow function with lexical this</p>
+            <button onclick="testES5ThisArrowFunction()">ES5</button>
+            <button onclick="testES6ThisArrowFunction()">ES6</button>
+        </li>
+        <li>
+            <p>Default parameter</p>
+            <button onclick="testES5DefaultParameter()">ES5</button>
+            <button onclick="testES6DefaultParameter()">ES6</button>
+        </li>
     </ul>
 
     <div class="result-container">
@@ -48,5 +63,7 @@
     <script src="util.js"></script>
     <script src="Test/destructuring.js"></script>
     <script src="Test/map-set.js"></script>
+    <script src="Test/arrow-function.js"></script>
+    <script src="Test/default-parameter.js"></script>
 </body>
 </html>
