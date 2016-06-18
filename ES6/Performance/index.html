@@ -12,6 +12,7 @@
 
         .result-container{
             margin-left: 40%;
+            margin-top: 300px;
         }
     </style>
 </head>
@@ -61,6 +62,16 @@
             <button onclick="testES5Promise()">ES5</button>
             <button onclick="testES6Promise()">ES6</button>
         </li>
+        <li>
+            <p>For...of loop</p>
+            <button onclick="testES5ForOfLoop()">ES5</button>
+            <button onclick="testES6ForOfLoop()">ES6</button>
+        </li>
+        <li>
+            <p>Class</p>
+            <button onclick="testES5Class()">ES5</button>
+            <button onclick="testES6Class()">ES6</button>
+        </li>
     </ul>
 
     <div class="result-container">
@@ -79,5 +90,8 @@
 
     <script src="Lib/jquery-3.0.0.min.js"></script>
     <script src="Test/promise.js"></script>
+
+    <script src="Test/for-of.js"></script>
+    <script src="Test/class.js"></script>
 </body>
 </html>

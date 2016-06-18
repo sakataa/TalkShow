@@ -36,3 +36,9 @@ function testES6Promise(){
         }
     })
 }
+
+
+
+
+
+
