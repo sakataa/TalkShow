@@ -7,8 +7,7 @@ for(let i = 0; i < forLoopCount; i++){
 function testES5ForOfLoop(){
     testES5(function(){
         // for(let i = 0; i < arrayData.length; i++){
-        //     let item = arrayData[i];
-        //     console.log(item);
+        //     console.log(arrayData[i]);
         // }
         arrayData.forEach(function(item){
             console.log(item);

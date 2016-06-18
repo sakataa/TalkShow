@@ -1,6 +1,6 @@
 let count = books.items.length;
 let bookList = books.items;
-let defaultLength = 1000000000;
+
 let es5EllapsedTime = 0;
 let es6EllapsedTime = 0;
 

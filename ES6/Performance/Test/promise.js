@@ -8,7 +8,7 @@ function testES5Promise(){
                 url: url
             })
             .then(function( data, textStatus, jqXHR ) {
-                //console.log("ES5: " + i);              
+                console.log(data);              
             });
         }
     })
@@ -32,7 +32,7 @@ function testES6Promise(){
 
                 request.send();
             })
-            .then( (data) => { /*console.log("ES6: " + i);*/ } );
+            .then( (data) => { console.log(data); } );
         }
     })
 }

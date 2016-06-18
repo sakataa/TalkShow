@@ -1,10 +1,10 @@
+let destructuringLength = 1000000000;
 let book = bookList[0];
 resetTime();
 
 function testES5Destructuring(){
     testES5(function() {
-        console.time("ES5Destructuring");
-        for(var i = 0; i < defaultLength; i++){        
+        for(let i = 0; i < destructuringLength; i++){        
             var bookId = book.id;
             var bookKind = book.kind;
             var bookTitle = book.volumeInfo.title;
@@ -14,17 +14,14 @@ function testES5Destructuring(){
             var hasPDF = book.accessInfo.pdf.isAvailable;
             var offers = book.offers;
         }
-        console.timeEnd("ES5Destructuring");
     })
 }
 
 function testES6Destructuring(){
     testES6(function(){
-        console.time("ES6Destructuring");
-        for(var i = 0; i < defaultLength; i++){
+        for(let i = 0; i < destructuringLength; i++){
             var { id, kind, volumeInfo: { title: bookTitle, subtitle: bookSubtitle }, saleInfo: { saleability: isForSale }, accessInfo: { epub: { isAvailable: hasEPUB}, pdf: { isAvailable: hasPDF } }, offers } = book;
         }
-        console.timeEnd("ES6Destructuring");
     })
 }
 

@@ -1,6 +1,9 @@
+let arrowFunctionLength = 1000000;
 let es5Obj = {
     value: 40,
-    fn: function(){},
+    fn: function(){
+        console.log("ES5");
+    },
     getValue: function(){
         var self = this;
         return function(){
@@ -11,7 +14,9 @@ let es5Obj = {
 
 let es6Obj = {
     value: 40,
-    fn: () => {},
+    fn: () => {
+        console.log("ES6");
+    },
     getValue: function() {
         return () => this.value;
     }
@@ -19,7 +24,7 @@ let es6Obj = {
 
 function testES5ArrowFunction(){
     testES5(function(){
-        for(var i = 0; i < defaultLength; i++){
+        for(let i = 0; i < arrowFunctionLength; i++){
             es5Obj.fn();
         }
     })
@@ -27,7 +32,7 @@ function testES5ArrowFunction(){
 
 function testES6ArrowFunction(){
     testES6(function(){
-        for(var i = 0; i < defaultLength; i++){
+        for(let i = 0; i < arrowFunctionLength; i++){
             es6Obj.fn();
         }
     })
@@ -35,16 +40,16 @@ function testES6ArrowFunction(){
 
 function testES5ThisArrowFunction(){
     testES5(function(){
-        for(var i = 0; i < defaultLength; i++){
-            es5Obj.getValue()();
+        for(let i = 0; i < arrowFunctionLength; i++){
+            console.log(es5Obj.getValue()());
         }
     })
 }
 
 function testES6ThisArrowFunction(){
     testES6(function(){
-        for(var i = 0; i < defaultLength; i++){
-            es6Obj.getValue()();
+        for(let i = 0; i < arrowFunctionLength; i++){
+            console.log(es6Obj.getValue()());
         }
     })
 }

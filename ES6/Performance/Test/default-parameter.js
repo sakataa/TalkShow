@@ -1,4 +1,4 @@
-let defaultParameterCount = 1000000;
+let defaultParameterCount = 100000;
 
 let es5API = {
   methodA: function(b1, b2, b3, b4, b5, c1, c2, c3, c4, c5) {
@@ -47,16 +47,16 @@ let es6API = {
 
 function testES5DefaultParameter(){
     testES5(function(){
-        for(var i = 0; i < defaultParameterCount; i++){
-            es5API.methodA(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        for(let i = 0; i < defaultParameterCount; i++){
+            console.log(es5API.methodA(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
         }
     })
 }
 
 function testES6DefaultParameter(){
     testES6(function(){
-        for(var i = 0; i < defaultParameterCount; i++){
-            es6API.methodA(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        for(let i = 0; i < defaultParameterCount; i++){
+            console.log(es6API.methodA(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
         }
     })
 }
