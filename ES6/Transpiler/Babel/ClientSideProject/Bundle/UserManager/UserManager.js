@@ -45,7 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	module.exports = __webpack_require__(301);
+	module.exports = __webpack_require__(302);
 
 
 /***/ },
@@ -8103,12 +8103,13 @@
 /***/ },
 /* 299 */,
 /* 300 */,
-/* 301 */
+/* 301 */,
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
-	var _employee = __webpack_require__(302);
+	var _employee = __webpack_require__(303);
 	
 	var employee = new _employee.Employee("Rapth", "Developer");
 	console.log(employee.title);
@@ -8118,7 +8119,7 @@
 	document.getElementById("output").innerHTML = "Name: " + employee.name + " -- Title: " + employee.title;
 
 /***/ },
-/* 302 */
+/* 303 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8134,7 +8135,7 @@
 	
 	exports.square = square;
 	
-	var _person = __webpack_require__(303);
+	var _person = __webpack_require__(304);
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -8178,7 +8179,7 @@
 	}
 
 /***/ },
-/* 303 */
+/* 304 */
 /***/ function(module, exports) {
 
 	"use strict";

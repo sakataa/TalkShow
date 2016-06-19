@@ -6,8 +6,7 @@
   "scripts": {
     "test": "test",
     "webpack": "webpack --watch",
-    "rollup": "rollup -c",
-    "rollup-babel": "rollup -c"
+    "rollup": "rollup -c"
   },
   "author": "walter",
   "license": "ISC",

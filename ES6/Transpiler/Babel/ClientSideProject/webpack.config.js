@@ -5,7 +5,8 @@ module.exports = {
         BlockScope: "./Scripts/BlockScope/blockscope.js",
         UserManager: ["babel-polyfill", "./Scripts/Module/userManager.js"],
         Collection: ["babel-polyfill", "./Scripts/Collection/collection.js"],
-        Promise: ["babel-polyfill", "./Scripts/Promise/promise.js"]
+        Promise: ["babel-polyfill", "./Scripts/Promise/promise.js"],
+        DefaultLib: "./Scripts/Module/defaultManager.js"
     },
     output: {
         path: path.resolve(__dirname, './'),

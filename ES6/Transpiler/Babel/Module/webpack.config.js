@@ -2,7 +2,8 @@ var path = require('path');
  
 module.exports = {
     entry: {
-        userManager: "./Scripts/Import/userManager.js"
+        userManager: "./Scripts/Import/userManager.js",
+        defaultLib: "./Scripts/Import/defaultManager.js"
     },
     output: {
         path: path.resolve(__dirname, './'),
