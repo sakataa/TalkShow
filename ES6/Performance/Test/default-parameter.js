@@ -1,4 +1,4 @@
-let defaultParameterCount = 100000;
+let defaultParameterCount = 500000;
 
 let es5API = {
   methodA: function(b1, b2, b3, b4, b5, c1, c2, c3, c4, c5) {
