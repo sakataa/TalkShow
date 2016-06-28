@@ -1,4 +1,4 @@
-let classLength = 500000;
+let classLength = 200000;
 
 function ES5Class(){
     this.name = "ES5";
