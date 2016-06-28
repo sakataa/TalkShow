@@ -55,3 +55,10 @@ function testES6(es6FnTest) {
     showES6Result(es6EllapsedTime);
     getResult();
 }
+
+function clearAll() {
+    resetTime();
+    showES5Result("");
+    showES6Result("");
+    showResult("");
+}

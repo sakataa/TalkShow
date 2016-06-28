@@ -1,6 +1,6 @@
 resetTime();
-let length = 1000000;
-let lengthLookup = 100000000;
+let length = 100000;
+let lengthLookup = 10000000;
 
 let keys = [],
     values = [],

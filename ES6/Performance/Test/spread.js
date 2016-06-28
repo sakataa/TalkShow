@@ -1,4 +1,4 @@
-let spreadCount = 200000;
+let spreadCount = 100000;
 let spreadData = ["Muller", "Bruce", "Alex", "Bravo", "Joseph", "Forrest", "Walter"];
 
 function doSpread(p1, p2, p3, p4, p5, p6, p7){

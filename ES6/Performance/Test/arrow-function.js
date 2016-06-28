@@ -1,4 +1,4 @@
-let arrowFunctionLength = 200000;
+let arrowFunctionLength = 100000;
 let es5Obj = {
     value: 40,
     fn: function(){
