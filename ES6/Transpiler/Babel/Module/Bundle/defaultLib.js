@@ -1063,7 +1063,7 @@
 	    }return e ? a : j ? b.call(a) : i ? b(a[0], c) : f;
 	  },
 	      T = function T(a) {
-	    return 1 === a.nodeType || 9 === a.nodeType || ! +a.nodeType;
+	    return 1 === a.nodeType || 9 === a.nodeType || !+a.nodeType;
 	  };function U() {
 	    this.expando = r.expando + U.uid++;
 	  }U.uid = 1, U.prototype = { cache: function cache(a) {
