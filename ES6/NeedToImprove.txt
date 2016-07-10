@@ -6,3 +6,4 @@ ECMAScript 6
 - Phát âm tiếng anh chuẩn hơn: Promise, Destructuring, Module,...
 - Làm demo đơn giản, dễ hiểu hơn, ko cần giải thích quá chi tiết
 - Research lại promise của Angularjs
+- Vẽ rõ ra các level của Callback hell, Promise, Generator + Promise
