@@ -20,7 +20,7 @@ class Person {
 }
 
 let _title = new WeakMap();
-class Employee extends Person {
+class Employee$1 extends Person {
     constructor(name, title){
       super(name);
       _title.set(this, title);            
@@ -34,6 +34,7 @@ class Employee extends Person {
     }
 }
 
+const Employee = Employee$1;
 let employee = new Employee("Rapth", "Developer");
 console.log(employee.title);
 employee.prototypeMethod();

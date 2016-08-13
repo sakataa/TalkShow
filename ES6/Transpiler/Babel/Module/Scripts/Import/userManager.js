@@ -1,5 +1,6 @@
-import { Employee, count } from "../Export/employee"
+import * as employeeApi from "../Export/employee"
 
+const Employee = employeeApi.Employee;
 let employee = new Employee("Rapth", "Developer");
 console.log(employee.title);
 employee.prototypeMethod();

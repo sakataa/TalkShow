@@ -48,10 +48,15 @@
 	
 	var _employee = __webpack_require__(5);
 	
-	var employee = new _employee.Employee("Rapth", "Developer");
+	var employeeApi = _interopRequireWildcard(_employee);
+	
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+	
+	var Employee = employeeApi.Employee;
+	var employee = new Employee("Rapth", "Developer");
 	console.log(employee.title);
 	employee.prototypeMethod();
-	_employee.Employee.staticMethod();
+	Employee.staticMethod();
 	
 	document.getElementById("output").innerHTML = "Name: " + employee.name + " - Title: " + employee.title;
 
@@ -69,28 +74,39 @@
 	  value: true
 	});
 	exports.count = exports.Employee = undefined;
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
+	
 	exports.square = square;
 	
 	var _person = __webpack_require__(6);
 	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
 	var _title = new WeakMap();
 	
 	var Employee = exports.Employee = function (_Person) {
-	  babelHelpers.inherits(Employee, _Person);
+	  _inherits(Employee, _Person);
 	
 	  function Employee(name, title) {
-	    babelHelpers.classCallCheck(this, Employee);
+	    _classCallCheck(this, Employee);
 	
-	    var _this = babelHelpers.possibleConstructorReturn(this, Object.getPrototypeOf(Employee).call(this, name));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Employee).call(this, name));
 	
 	    _title.set(_this, title);
 	    return _this;
 	  }
 	
-	  babelHelpers.createClass(Employee, [{
+	  _createClass(Employee, [{
 	    key: "prototypeMethod",
 	    value: function prototypeMethod() {
-	      babelHelpers.get(Object.getPrototypeOf(Employee.prototype), "prototypeMethod", this).call(this);
+	      _get(Object.getPrototypeOf(Employee.prototype), "prototypeMethod", this).call(this);
 	      console.log("name: " + this.name + ", title: " + this.title);
 	    }
 	  }, {
@@ -99,6 +115,7 @@
 	      return _title.get(this);
 	    }
 	  }]);
+	
 	  return Employee;
 	}(_person.Person);
 	
@@ -116,16 +133,21 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
 	var _name = Symbol();
 	
 	var Person = exports.Person = function () {
 	    function Person(name) {
-	        babelHelpers.classCallCheck(this, Person);
+	        _classCallCheck(this, Person);
 	
 	        this[_name] = name;
 	    }
 	
-	    babelHelpers.createClass(Person, [{
+	    _createClass(Person, [{
 	        key: "prototypeMethod",
 	        value: function prototypeMethod() {
 	            console.log("call prototype method");
@@ -144,6 +166,7 @@
 	            console.log("call static method");
 	        }
 	    }]);
+
 	    return Person;
 	}();
 
