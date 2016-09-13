@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<style>
+p{
+text-align: center;
+font-size: 24px;
+}
+</style>  
+ </head>
+ <body onload="onLoad()">
+	<p id="test"></p>
+ </body>
+</html>
+
+<script>
+function onLoad() {
+    let obj1 = {Id: 1, Name: "Walter"};
+    let obj2 = obj1;
+    
+    obj2.Id = 3;
+    console.log("After assigning Id from obj2");
+    console.log("obj1", obj1);
+    console.log("obj2", obj2);
+    
+    obj2 = null;
+    console.log("After assigning Id from obj2");
+    console.log("obj1", obj1);
+    console.log("obj2", obj2);
+    
+    obj1 = null;
+    console.log("After assigning Id from obj2");
+    console.log("obj1", obj1);
+    console.log("obj2", obj2);
+}
+</script>

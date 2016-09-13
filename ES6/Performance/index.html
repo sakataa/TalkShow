@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECMAScript 6 Performance</title>
+
+    <style>
+        ul{
+            float: left;
+            width: 40%;
+        }
+
+        .result-container{
+            font-size: 24px;
+            margin-left: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ECMAScript 6 Performance</h1>
+
+    <div class="result-container">
+        <p>ES5: <span id="es5ElapsedTime"></span></p>
+        <p>ES6: <span id="es6ElapsedTime"></span></p>
+        <p>Result: <span id="result"></span></p>
+
+        <button onclick="clearAll()">Clear</button>
+    </div>
+
+    <ul>
+        <li>
+            <p>Destructuring</p>
+            <button onclick="testES5Destructuring()">ES5</button>
+            <button onclick="testES6Destructuring()">ES6</button>
+        </li>
+
+        <li>
+            <p>Map/Set add item</p>
+            <button onclick="testES5MapSetAddItem()">ES5</button>
+            <button onclick="testES6MapSetAddItem()">ES6</button>
+        </li>
+        <li>
+            <p>Map/Set look up</p>
+            <button onclick="testES5MapSetLookup()">ES5</button>
+            <button onclick="testES6MapSetLookup()">ES6</button>
+        </li>
+        <li>
+            <p>Arrow function</p>
+            <button onclick="testES5ArrowFunction()">ES5</button>
+            <button onclick="testES6ArrowFunction()">ES6</button>
+        </li>
+        <li>
+            <p>Arrow function with lexical this</p>
+            <button onclick="testES5ThisArrowFunction()">ES5</button>
+            <button onclick="testES6ThisArrowFunction()">ES6</button>
+        </li>
+        <li>
+            <p>Default parameter</p>
+            <button onclick="testES5DefaultParameter()">ES5</button>
+            <button onclick="testES6DefaultParameter()">ES6</button>
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            <p>Template Literal</p>
+            <button onclick="testES5TemplateLiteral()">ES5</button>
+            <button onclick="testES6TemplateLiteral()">ES6</button>
+        </li>
+        <li>
+            <p>Promise</p>
+            <button onclick="testES5Promise()">ES5</button>
+            <button onclick="testES6Promise()">ES6</button>
+        </li>
+        <li>
+            <p>For...of loop</p>
+            <button onclick="testES5ForOfLoop()">ES5</button>
+            <button onclick="testES6ForOfLoop()">ES6</button>
+        </li>
+        <li>
+            <p>Class</p>
+            <button onclick="testES5Class()">ES5</button>
+            <button onclick="testES6Class()">ES6</button>
+        </li>
+        <li>
+            <p>Rest</p>
+            <button onclick="testES5Rest()">ES5</button>
+            <button onclick="testES6Rest()">ES6</button>
+        </li>
+        <li>
+            <p>Spread</p>
+            <button onclick="testES5Spread()">ES5</button>
+            <button onclick="testES6Spread()">ES6</button>
+        </li>
+    </ul>
+
+    <script src="Data/book.js"></script>
+    <script src="util.js"></script>
+    <script src="Test/destructuring.js"></script>
+    <script src="Test/map-set.js"></script>
+    <script src="Test/arrow-function.js"></script>
+    <script src="Test/default-parameter.js"></script>
+    <script src="Test/template-literal.js"></script>
+
+    <script src="Lib/jquery-3.0.0.min.js"></script>
+    <script src="Test/promise.js"></script>
+
+    <script src="Test/for-of.js"></script>
+    <script src="Test/class.js"></script>
+    <script src="Test/rest.js"></script>
+    <script src="Test/spread.js"></script>
+</body>
+</html>

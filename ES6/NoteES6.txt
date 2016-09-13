@@ -1,0 +1,15 @@
+- Dung 2 ví dụ cho Hoisting, đưa ra cách browser hiểu, chia 2 slide
+- Pitfall
+- Chia ra 2 vấn đề của block scope
+- Constant dùng slied riêng và nói kỹ. Khi nào dùng var,let,constant
+- Phần demo block scope có thể show hoặc không cần show
+- From IIFEs to blocks trình bay sau let
+
+Arrow Function
+- Dùng code trong slide làm demo
+- Ví dụ rõ hơn, dưa ra vấn đề, giải quyết bằng es5, sau đó dùng arrow function
+- Spread: dùng Max trước, sau đó dùng foo
+
+Default parameter:
+- Nói rõ chức năng của hàm là cộng 2 số
+- Rest, Spread, Default parameter: parameter enhancement 
