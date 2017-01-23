@@ -5,6 +5,7 @@ function Ex1() {
     console.log(bar);
     console.log(awesome);
     console.log(instance);
+    const a;
 }
 
 document.getElementById('btnEx1').addEventListener('click', function () {
